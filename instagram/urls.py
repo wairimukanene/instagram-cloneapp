@@ -1,2 +1,7 @@
 from django.urls import path
-from instagram import view
+from instagram import views
+
+
+urlpatterns = [
+  path('',views.index, name='index')
+]
