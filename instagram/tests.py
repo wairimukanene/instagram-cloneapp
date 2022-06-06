@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Create your tests here.
 class ImageTest(TestCase):
     def setUp(self):
-        self.test_user= User(username = "Felista", password = "ilovemyself")
+        self.test_user= User(username = "wairimu", password = "wairimu12")
         self.test_user.save()
 
         self.test_image = Image(image='images/test.jpg', posted_by=self.test_user, date_posted=datetime.now())
@@ -25,7 +25,7 @@ class ImageTest(TestCase):
 class ProfileTest(TestCase):
     def setUp(self):
         ''' method called before each test case'''
-        self.user = User.objects.create_user(username='Felista')
+        self.user = User.objects.create_user(username='wairimu')
 
     def tearDown(self):
         self.user.delete()
