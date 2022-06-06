@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save,post_delete
 from django.utils.text import slugify
 from django.urls import reverse
+import uuid
+
 
 
 # uploading user files to a specific directory
@@ -29,6 +31,19 @@ class Tag(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+      
+class Post(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    picture = models.ImageField(upload_to=user_directory_path, verbose_name="Picture")
+    caption = models.CharField(max_length=10000, verbose_name="Caption")
+    posted = models.DateField(auto_now_add=True)
+    tags = models.ManyToManyField(Tag, related_name="tags")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.IntegerField(default=0)
+
+    def get_absolute_url(self):
+        return reverse("post-details", args=[str(self.id)])
+
 
 
 
