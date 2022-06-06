@@ -1,0 +1,36 @@
+.phones{
+  height: 61.8rem;
+  background: url('../../static/images/phones.png') center no-repeat;
+  flex: 1;
+  
+}
+.logo{
+  width: 17.5rem;
+}
+.sign-up{
+  /* padding-top: 3%;
+  padding-left:11%; */
+  text-align: center;
+  font-size: 1.4rem;
+  color: #262626;
+  padding: 1rem 0;
+  background-color: #fff;
+  border: 2px solid #eee;
+  margin: 1rem 0;
+}
+.panel-form{
+  padding-top: 5%;
+
+}
+
+@media (max-width: 1024px){
+  .phones{
+      display: none;
+  }
+ 
+}
+@media(min-width: 320px){
+.login{
+    width: 100px;
+}
+}
