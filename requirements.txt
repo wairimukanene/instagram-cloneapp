@@ -73,6 +73,7 @@ paramiko==2.6.0
 pexpect==4.6.0
 Pillow==7.0.0
 pipenv==2022.5.2
+pkg-resources
 protobuf==3.6.1
 psutil==5.5.1
 psycopg2==2.9.3
